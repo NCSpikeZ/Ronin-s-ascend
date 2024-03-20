@@ -95,7 +95,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "072d51bcc9c09311d4c2a6708b05bddc.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0357d163e2edd7add0fe1b819168bd73.png");
 
 /***/ }),
 
@@ -108,7 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "cfffe4c371f5e11d372b398a87c51dd0.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "b126fae175375f77e6649a734993c753.png");
 
 /***/ }),
 
@@ -121,7 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "ffab39d3487de561be1a081fcfb3806d.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "c06e87ee8d57583a2f85de4899535b60.png");
 
 /***/ }),
 
@@ -134,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0587f9be8e442eb74b2fe283bbf1a947.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "68cc4f6ff3db8669015e30c0b78b81b5.png");
 
 /***/ }),
 
@@ -324,7 +324,7 @@ function init() {
     y: 470,
     image: platformImage
   }), new Platform({
-    x: platformImage.width * 5 + 620 - 2,
+    x: platformImage.width * 5 + 600 - 2,
     y: 470,
     image: platformImage
   })];
