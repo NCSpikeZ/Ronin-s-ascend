@@ -1,8 +1,13 @@
 import platform from '../img/platform.png'
-import platformSmallTall from '../img/platformSmallTall.png'
 import hills from '../img/hills.png'
 import background from '../img/background.png'
-console.log(platform)
+import platformSmallTall from '../img/platformSmallTall.png'
+
+import spriteRunLeft from '../img/spriteRunLeft.png'
+import spriteRunRight from '../img/spriteRunRight.png'
+import spriteStandLeft from '../img/spriteStandLeft.png'
+import spriteStandRight from '../img/spriteStandRight.png'
+
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
@@ -23,23 +28,50 @@ class Player {
       y: 0
     }
 
-    this.width = 30  // taille player
-    this.height = 30
-    this.isJumping = false; // jump?
+    this.width = 200  // taille player
+    this.height = 200
+    this.isJumping = false // jump?
+
+    this.image = createImage(spriteStandRight)
+    this.frames = 0
+    this.sprites = {
+      stand: {
+        right: createImage(spriteStandRight),
+        left: createImage(spriteStandLeft)
+      },
+      run: {
+        right: createImage(spriteRunRight),
+        left: createImage(spriteRunLeft)
+      }
+    }
+    
+    this.currentSprite = this.sprites.stand.right
   }
 
   draw() {
-    c.fillStyle = "red"; // couleur player
-    c.fillRect(this.position.x, this.position.y, this.width, this.height);
+    c.drawImage(
+      this.currentSprite,
+      128 * this.frames,
+      0,
+      128,
+      128,
+      this.position.x,
+      this.position.y,
+      this.width,
+      this.height
+    )
   }
 
   update() {
+    this.frames++
+    if (this.frames >9) this.frames = 0
+
     this.draw()
 
     // gestion jump
     if (this.isJumping && this.position.y + this.height >= canvas.height - 500) {
-      this.velocity.y = -25;
-      this.isJumping = false;
+      this.velocity.y = -25
+      this.isJumping = false
     }
 
     this.position.y += this.velocity.y
@@ -47,8 +79,18 @@ class Player {
 
     // gravité
     if (this.position.y + this.height < canvas.height) {
-      this.velocity.y += gravity;
+      this.velocity.y += gravity
     }
+  }
+
+  drawCollisionBox() {
+    c.strokeStyle = 'red'
+    c.strokeRect(
+      this.position.x + 75,     // Décalage vers la droite pour ajuster la position
+      this.position.y + 85,    // Décalage vers le bas pour ajuster la position
+      this.width - 150,       // Largeur réduite pour correspondre à la taille du sprite
+      this.height - 80       // Hauteur réduite pour correspondre à la taille du sprite
+    )
   }
 }
 
@@ -66,6 +108,11 @@ class Platform {
 
   draw() {
     c.drawImage(this.image, this.position.x, this.position.y)
+  }
+
+  drawCollisionBox() {
+    c.strokeStyle = 'blue'
+    c.strokeRect(this.position.x, this.position.y, this.width, this.height)
   }
 }
 
@@ -85,6 +132,11 @@ class GenericObject {
   draw() {
     c.drawImage(this.image, this.position.x, this.position.y)
   }
+
+  drawCollisionBox() {
+    c.strokeStyle = 'green'
+    c.strokeRect(this.position.x, this.position.y, this.width, this.height)
+  }
 }
 
 function createImage(imageSrc){
@@ -100,6 +152,7 @@ let player = new Player()
 let platforms = []
 let genericObjects = []
 
+let lastKey
 const keys = {
   right: {
     pressed: false
@@ -152,14 +205,18 @@ function animate() {
   c.fillStyle = 'white'
   c.fillRect(0, 0, canvas.width, canvas.height)
 
-  genericObjects.forEach(genericObjects => {
-    genericObjects.draw()
+  genericObjects.forEach(genericObject => {
+    genericObject.draw()
+    genericObject.drawCollisionBox() // Dessine la zone de collision pour le débogage
   })
 
   platforms.forEach(platform => {
     platform.draw()
+    platform.drawCollisionBox() // Dessine la zone de collision pour le débogage
   })
+
   player.update()
+  player.drawCollisionBox() // Dessine la zone de collision pour le débogage
 
   if (keys.right.pressed && player.position.x < 400) {
     player.velocity.x = player.speed
@@ -168,7 +225,7 @@ function animate() {
     player.velocity.x = -player.speed
   } else {
     player.velocity.x = 0
-  
+
     if (keys.right.pressed) {
       scrollOffset += player.speed
       platforms.forEach(platform => {
@@ -188,24 +245,44 @@ function animate() {
     }
   }
 
-  // collision avec les platforms
   platforms.forEach(platform => {
     if (
-      player.position.y + player.height 
-      <= platform.position.y && player.position.y + player.height
-      + player.velocity.y >= platform.position.y && player.position.x 
-      + player.width >= platform.position.x && player.position.x <+ platform.position.x
-      + platform.width) {
-      player.velocity.y = 0 
+      player.position.x + 75 < platform.position.x + platform.width &&
+      player.position.x + player.width - 75 > platform.position.x &&
+      player.position.y < platform.position.y + platform.height &&
+      player.position.y + player.height > platform.position.y &&
+      player.position.y < platform.position.y &&
+      player.velocity.y >= 0
+    ) {
+      player.velocity.y = 0
+      player.position.y = platform.position.y - player.height
     }
   })
+  
 
-// victoire!
+  if (
+    keys.right.pressed &&
+    lastKey === 'right' && player.currentSprite !== player.sprites.run.right) {
+    player.frames = 1
+    player.currentSprite = player.sprites.run.right
+  } else if (
+    keys.left.pressed &&
+    lastKey === 'left' && player.currentSprite !== player.sprites.run.left) {
+    player.currentSprite = player.sprites.run.left
+  } else if (
+    !keys.left.pressed &&
+    lastKey === 'left' && player.currentSprite !== player.sprites.stand.left) {
+    player.currentSprite = player.sprites.stand.left
+  } else if (
+    !keys.right.pressed &&
+    lastKey === 'right' && player.currentSprite !== player.sprites.stand.right) {
+    player.currentSprite = player.sprites.stand.right
+  }
+
   if (scrollOffset > platformImage.width *5 + 300 -2){
     console.log('you win')
   }
 
-//défaite
   if (player.position.y > canvas.height) {
     console.log('you lose')
     init()
@@ -215,11 +292,11 @@ init()
 animate()
 
 addEventListener('keydown', ({ keyCode }) => {
-  // console.log(keyCode)
   switch (keyCode) {
     case 81:
       console.log('left')
       keys.left.pressed = true
+      lastKey = 'left'
       break
     case 83:
       console.log('down')
@@ -227,23 +304,24 @@ addEventListener('keydown', ({ keyCode }) => {
     case 68:
       console.log('right')
       keys.right.pressed = true
+      lastKey = 'right'
       break
     case 90:
       console.log('up')
-      if (!player.isJumping && (Date.now() - player.lastJumpTime) > 300) {
-        player.isJumping = true;
-        player.lastJumpTime = Date.now();
+      if (!player.isJumping && (Date.now() - player.lastJumpTime) > 350) {
+        player.isJumping = true
+        player.lastJumpTime = Date.now()
       }
       break
   }
 })
 
 addEventListener('keyup', ({ keyCode }) => {
-  // console.log(keyCode)
   switch (keyCode) {
     case 81:
       console.log('left')
       keys.left.pressed = false
+      player.currentSprite = player.sprites.stand.left
       break
     case 83:
       console.log('down')
