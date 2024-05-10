@@ -7,6 +7,8 @@ import spriteRunLeft from '../img/spriteRunLeft.png'
 import spriteRunRight from '../img/spriteRunRight.png'
 import spriteStandLeft from '../img/spriteStandLeft.png'
 import spriteStandRight from '../img/spriteStandRight.png'
+import spriteJumpLeft from '../img/spriteJumpLeft.png'
+import spriteJumpRight from '../img/spriteJumpRight.png'
 
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
@@ -42,6 +44,10 @@ class Player {
       run: {
         right: createImage(spriteRunRight),
         left: createImage(spriteRunLeft)
+      },
+      jump: {
+        right: createImage(spriteJumpRight),
+        left: createImage(spriteJumpLeft)
       }
     }
     
@@ -139,18 +145,59 @@ class GenericObject {
   }
 }
 
+class Ennemy {
+  constructor({position,velocity}) {
+    this.position = {
+      x: position.x,
+      y: position.y
+    }
+
+    this.velocity = {
+      x: velocity.x,
+      y: velocity.y
+    }
+
+    this.width = 50
+    this.height = 50
+  }
+  draw() {
+   c.fillStyle = 'red'
+   c.fillRect(this.position.x, this.position.y, this.width, this.height)
+  }
+
+  update() {
+    this.draw()
+    this.position.x += this.velocity.x
+    this.position.y += this.velocity.y
+
+    if (this.position.y + this.height + this.velocity.y <= canvas.height)
+    this.velocity.y += gravity
+  }
+}
+
 function createImage(imageSrc){
   const image = new Image()
   image.src = imageSrc
   return image
 }
 
-let platformImage = createImage(platform)
-let platformSmallTallImage = createImage(platformSmallTall)
+function createImageAsync(imageSrc){
+  return new Promise((resolve) => {
+    const image = new Image()
+    image.onload = () => {
+      resolve(image)
+    }
+    image.src = imageSrc
+  })
+}
+
+let platformImage
+let platformSmallTallImage
 let player = new Player()
 // array platforms + positions
 let platforms = []
 let genericObjects = []
+let ennemies = []
 
 let lastKey
 const keys = {
@@ -160,13 +207,37 @@ const keys = {
   left: {
     pressed: false
   },
+  up: {
+    pressed:false
+  }
 }
 
 let scrollOffset = 0
 
-function init(){
-  platformImage = createImage(platform)
+function isOnTopOfPlatform({ object,platform }) {
+  return (
+    object.position.x + 75 < platform.position.x + platform.width &&
+    object.position.x + object.width - 75 > platform.position.x &&
+    object.position.y < platform.position.y + platform.height &&
+    object.position.y + object.height > platform.position.y &&
+    object.position.y < platform.position.y &&
+    object.velocity.y >= 0
+  )
+}
+
+async function init(){
+  platformImage = await createImageAsync(platform)
+  platformSmallTallImage = await createImageAsync(platformSmallTall)
   player = new Player()
+  ennemies = [new Ennemy({position: {
+    x: 400, 
+    y: 100,
+  },
+  velocity: {
+    x: -0.3,
+    y: 0,
+  }
+})]
   // array platforms + positions
   platforms = [new Platform({
     x:platformImage.width *4 + 300 -2 + platformImage.width - platformSmallTallImage.width, y:270, image: platformSmallTallImage
@@ -215,6 +286,9 @@ function animate() {
     platform.drawCollisionBox() // Dessine la zone de collision pour le débogage
   })
 
+  ennemies.forEach((Ennemy) => {
+    Ennemy.update()
+  }) 
   player.update()
   player.drawCollisionBox() // Dessine la zone de collision pour le débogage
 
@@ -226,6 +300,8 @@ function animate() {
   } else {
     player.velocity.x = 0
 
+
+  // code de scroll
     if (keys.right.pressed) {
       scrollOffset += player.speed
       platforms.forEach(platform => {
@@ -233,6 +309,10 @@ function animate() {
       })
       genericObjects.forEach(genericObject =>{
         genericObject.position.x -= player.speed * .66
+      })
+
+      ennemies.forEach(Ennemy => {
+        Ennemy.position.x -= player.speed
       })
     } else if (keys.left.pressed && scrollOffset > 0) {
       scrollOffset -= player.speed
@@ -245,18 +325,26 @@ function animate() {
     }
   }
 
+  // collision platform
   platforms.forEach(platform => {
     if (
-      player.position.x + 75 < platform.position.x + platform.width &&
-      player.position.x + player.width - 75 > platform.position.x &&
-      player.position.y < platform.position.y + platform.height &&
-      player.position.y + player.height > platform.position.y &&
-      player.position.y < platform.position.y &&
-      player.velocity.y >= 0
+      isOnTopOfPlatform({
+        object: player,
+        platform
+      })
     ) {
       player.velocity.y = 0
       player.position.y = platform.position.y - player.height
     }
+
+    ennemies.forEach(Ennemy => {
+      if (isOnTopOfPlatform({
+        object: Ennemy,
+        platform
+        })
+      )
+        Ennemy.velocity.y = 0    
+    })
   })
   
 
@@ -279,7 +367,7 @@ function animate() {
     player.currentSprite = player.sprites.stand.right
   }
 
-  if (scrollOffset > platformImage.width *5 + 300 -2){
+  if (platformImage && scrollOffset > platformImage.width *5 + 300 -2){
     console.log('you win')
   }
 
@@ -308,10 +396,12 @@ addEventListener('keydown', ({ keyCode }) => {
       break
     case 90:
       console.log('up')
+      keys.up.pressed = true
       if (!player.isJumping && (Date.now() - player.lastJumpTime) > 350) {
         player.isJumping = true
         player.lastJumpTime = Date.now()
       }
+      lastKey = 'up'
       break
   }
 })
@@ -332,6 +422,7 @@ addEventListener('keyup', ({ keyCode }) => {
       break
     case 90:
       console.log('up')
+      keys.up.pressed = false
       break
   }
 })
