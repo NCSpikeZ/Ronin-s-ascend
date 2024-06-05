@@ -571,6 +571,45 @@ try {
 
 /***/ }),
 
+/***/ "./src/font/Genjiro.otf":
+/*!******************************!*\
+  !*** ./src/font/Genjiro.otf ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "fonts/Genjiro.ab664676c3514216fec7bdb5b39a43d7.otf");
+
+/***/ }),
+
+/***/ "./src/img/SpriteEnemyDeath.png":
+/*!**************************************!*\
+  !*** ./src/img/SpriteEnemyDeath.png ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/SpriteEnemyDeath.388d7325a5b7ddffbf93c1861daec6c2.png");
+
+/***/ }),
+
+/***/ "./src/img/arrow.png":
+/*!***************************!*\
+  !*** ./src/img/arrow.png ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/arrow.38cdf0209bf5c2f5039989333034e2c0.png");
+
+/***/ }),
+
 /***/ "./src/img/background.png":
 /*!********************************!*\
   !*** ./src/img/background.png ***!
@@ -580,7 +619,46 @@ try {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0357d163e2edd7add0fe1b819168bd73.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/background.0357d163e2edd7add0fe1b819168bd73.png");
+
+/***/ }),
+
+/***/ "./src/img/block.png":
+/*!***************************!*\
+  !*** ./src/img/block.png ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/block.fac88169424b827f4bbca82bd7a01a9f.png");
+
+/***/ }),
+
+/***/ "./src/img/blockTri.png":
+/*!******************************!*\
+  !*** ./src/img/blockTri.png ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/blockTri.0f732b622c2a2a256940ec159c5a7941.png");
+
+/***/ }),
+
+/***/ "./src/img/bowIcn.png":
+/*!****************************!*\
+  !*** ./src/img/bowIcn.png ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/bowIcn.0ed577e2ad8f6087a35ef95db05e4787.png");
 
 /***/ }),
 
@@ -593,7 +671,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "b126fae175375f77e6649a734993c753.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/hills.1a64aadc495fff3144ab2a0eb793eb37.png");
+
+/***/ }),
+
+/***/ "./src/img/logo.svg":
+/*!**************************!*\
+  !*** ./src/img/logo.svg ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/logo.2e68f38db6d11486202b1ca945d17c1e.svg");
 
 /***/ }),
 
@@ -606,7 +697,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "c06e87ee8d57583a2f85de4899535b60.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/platform.b9a187515e4332f3e49a3fdc571afeae.png");
 
 /***/ }),
 
@@ -619,33 +710,72 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "68cc4f6ff3db8669015e30c0b78b81b5.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/platformSmallTall.7ad1c50ad7a771a4f5dd5c019d4cb8b2.png");
 
 /***/ }),
 
-/***/ "./src/img/spriteJumpLeft.png":
-/*!************************************!*\
-  !*** ./src/img/spriteJumpLeft.png ***!
-  \************************************/
+/***/ "./src/img/spriteAttaque.png":
+/*!***********************************!*\
+  !*** ./src/img/spriteAttaque.png ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "a1ee43da70d39081f742f19bae5991d5.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteAttaque.1b48fd381bbf8f7214ceb213cbeb7381.png");
 
 /***/ }),
 
-/***/ "./src/img/spriteJumpRight.png":
-/*!*************************************!*\
-  !*** ./src/img/spriteJumpRight.png ***!
-  \*************************************/
+/***/ "./src/img/spriteAttaqueLeft.png":
+/*!***************************************!*\
+  !*** ./src/img/spriteAttaqueLeft.png ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "f7f7b443c014fc5582306e4d9062d75c.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteAttaqueLeft.57b0ee7d71d6baf7c9772857388041a6.png");
+
+/***/ }),
+
+/***/ "./src/img/spriteBow.png":
+/*!*******************************!*\
+  !*** ./src/img/spriteBow.png ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteBow.f9e94b676540256a7307297f856aebb2.png");
+
+/***/ }),
+
+/***/ "./src/img/spriteEnemy.png":
+/*!*********************************!*\
+  !*** ./src/img/spriteEnemy.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteEnemy.25fb69c6c5d90c6205471c32fb088c20.png");
+
+/***/ }),
+
+/***/ "./src/img/spriteEnemyReverse.png":
+/*!****************************************!*\
+  !*** ./src/img/spriteEnemyReverse.png ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteEnemyReverse.a3949a5d1e66b4d2b523683487fb1c01.png");
 
 /***/ }),
 
@@ -658,7 +788,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "137c0756a50f7240c4998e9a3134a031.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteRunLeft.137c0756a50f7240c4998e9a3134a031.png");
 
 /***/ }),
 
@@ -671,7 +801,33 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "6746b0abc95f152904874aac3bb02972.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteRunRight.6746b0abc95f152904874aac3bb02972.png");
+
+/***/ }),
+
+/***/ "./src/img/spriteShotLeft.png":
+/*!************************************!*\
+  !*** ./src/img/spriteShotLeft.png ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteShotLeft.e86fd783489a6581660416dba8cd70ee.png");
+
+/***/ }),
+
+/***/ "./src/img/spriteShotRight.png":
+/*!*************************************!*\
+  !*** ./src/img/spriteShotRight.png ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteShotRight.9a5c03b1913845655de37c6e0d00af83.png");
 
 /***/ }),
 
@@ -684,7 +840,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "08374e69796b6b8c044b484595fb3880.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteStandLeft.08374e69796b6b8c044b484595fb3880.png");
 
 /***/ }),
 
@@ -697,7 +853,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "e8d0bdb91063afaddef07897c15452e6.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/spriteStandRight.e8d0bdb91063afaddef07897c15452e6.png");
 
 /***/ }),
 
@@ -718,16 +874,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _img_platform_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/platform.png */ "./src/img/platform.png");
-/* harmony import */ var _img_hills_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/hills.png */ "./src/img/hills.png");
-/* harmony import */ var _img_background_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/background.png */ "./src/img/background.png");
-/* harmony import */ var _img_platformSmallTall_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/platformSmallTall.png */ "./src/img/platformSmallTall.png");
-/* harmony import */ var _img_spriteRunLeft_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/spriteRunLeft.png */ "./src/img/spriteRunLeft.png");
-/* harmony import */ var _img_spriteRunRight_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/spriteRunRight.png */ "./src/img/spriteRunRight.png");
-/* harmony import */ var _img_spriteStandLeft_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/spriteStandLeft.png */ "./src/img/spriteStandLeft.png");
-/* harmony import */ var _img_spriteStandRight_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/spriteStandRight.png */ "./src/img/spriteStandRight.png");
-/* harmony import */ var _img_spriteJumpLeft_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/spriteJumpLeft.png */ "./src/img/spriteJumpLeft.png");
-/* harmony import */ var _img_spriteJumpRight_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/spriteJumpRight.png */ "./src/img/spriteJumpRight.png");
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils.js */ "./src/js/utils.js");
+/* harmony import */ var _img_platform_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/platform.png */ "./src/img/platform.png");
+/* harmony import */ var _img_hills_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/hills.png */ "./src/img/hills.png");
+/* harmony import */ var _img_background_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/background.png */ "./src/img/background.png");
+/* harmony import */ var _img_platformSmallTall_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/platformSmallTall.png */ "./src/img/platformSmallTall.png");
+/* harmony import */ var _img_block_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/block.png */ "./src/img/block.png");
+/* harmony import */ var _img_blockTri_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/blockTri.png */ "./src/img/blockTri.png");
+/* harmony import */ var _img_bowIcn_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/bowIcn.png */ "./src/img/bowIcn.png");
+/* harmony import */ var _img_arrow_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/arrow.png */ "./src/img/arrow.png");
+/* harmony import */ var _img_spriteShotRight_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/spriteShotRight.png */ "./src/img/spriteShotRight.png");
+/* harmony import */ var _img_spriteShotLeft_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/spriteShotLeft.png */ "./src/img/spriteShotLeft.png");
+/* harmony import */ var _img_spriteRunLeft_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../img/spriteRunLeft.png */ "./src/img/spriteRunLeft.png");
+/* harmony import */ var _img_spriteRunRight_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../img/spriteRunRight.png */ "./src/img/spriteRunRight.png");
+/* harmony import */ var _img_spriteStandLeft_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../img/spriteStandLeft.png */ "./src/img/spriteStandLeft.png");
+/* harmony import */ var _img_spriteStandRight_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../img/spriteStandRight.png */ "./src/img/spriteStandRight.png");
+/* harmony import */ var _img_spriteEnemy_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../img/spriteEnemy.png */ "./src/img/spriteEnemy.png");
+/* harmony import */ var _img_spriteEnemyReverse_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../img/spriteEnemyReverse.png */ "./src/img/spriteEnemyReverse.png");
+/* harmony import */ var _img_SpriteEnemyDeath_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../img/SpriteEnemyDeath.png */ "./src/img/SpriteEnemyDeath.png");
+/* harmony import */ var _img_spriteAttaque_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../img/spriteAttaque.png */ "./src/img/spriteAttaque.png");
+/* harmony import */ var _img_spriteAttaqueLeft_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../img/spriteAttaqueLeft.png */ "./src/img/spriteAttaqueLeft.png");
+/* harmony import */ var _img_spriteBow_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../img/spriteBow.png */ "./src/img/spriteBow.png");
+/* harmony import */ var _img_logo_svg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../img/logo.svg */ "./src/img/logo.svg");
+/* harmony import */ var _font_Genjiro_otf__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../font/Genjiro.otf */ "./src/font/Genjiro.otf");
 
 
 
@@ -742,8 +911,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+var menu = document.createElement('div');
+menu.id = 'menu';
+var menuImage = document.createElement('img');
+menuImage.src = _img_logo_svg__WEBPACK_IMPORTED_MODULE_25__["default"];
+var startButton = document.createElement('button');
+startButton.id = 'startButton';
+startButton.textContent = 'Start';
+menu.appendChild(menuImage);
+menu.appendChild(startButton);
+document.body.appendChild(menu);
+var style = document.createElement('style');
+style.innerHTML = "\n    #menu {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        background: rgba(0, 0, 0, 0.7);\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        z-index: 1;\n    }\n\n    #menu img {\n        max-width: 15%;\n        height: auto;\n        margin-bottom: 50px;\n    }\n\n    #menu button {\n        padding: 15px 30px;\n        font-size: 28px;\n        cursor: pointer;\n        border-radius: 5px;\n        background-color: #74a6ff;\n        color: black;\n        font-family: 'Genjiro', sans-serif;\n        letter-spacing: 5px;\n    }\n\n    canvas {\n        display: block;\n    }\n";
+document.head.appendChild(style);
+var gameMusic = document.getElementById('gameMusic');
+gameMusic.volume = 0.5;
+startButton.addEventListener('click', function () {
+  gameMusic.play();
+});
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
+var gameStarted = false;
+startButton.addEventListener('click', function () {
+  menu.style.display = 'none';
+  gameStarted = true;
+});
 canvas.width = 1024;
 canvas.height = 576;
 var gravity = 1;
@@ -765,37 +970,141 @@ var Player = /*#__PURE__*/function () {
     this.width = 200; // taille player
 
     this.height = 200;
+    this.direction = 'right';
     this.isJumping = false; // jump?
 
-    this.image = createImage(_img_spriteStandRight_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
+    this.iconImage = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_bowIcn_png__WEBPACK_IMPORTED_MODULE_11__["default"]);
+    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteStandRight_png__WEBPACK_IMPORTED_MODULE_18__["default"]);
     this.frames = 0;
     this.sprites = {
       stand: {
-        right: createImage(_img_spriteStandRight_png__WEBPACK_IMPORTED_MODULE_11__["default"]),
-        left: createImage(_img_spriteStandLeft_png__WEBPACK_IMPORTED_MODULE_10__["default"])
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteStandRight_png__WEBPACK_IMPORTED_MODULE_18__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteStandLeft_png__WEBPACK_IMPORTED_MODULE_17__["default"])
       },
       run: {
-        right: createImage(_img_spriteRunRight_png__WEBPACK_IMPORTED_MODULE_9__["default"]),
-        left: createImage(_img_spriteRunLeft_png__WEBPACK_IMPORTED_MODULE_8__["default"])
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteRunRight_png__WEBPACK_IMPORTED_MODULE_16__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteRunLeft_png__WEBPACK_IMPORTED_MODULE_15__["default"])
       },
-      jump: {
-        right: createImage(_img_spriteJumpRight_png__WEBPACK_IMPORTED_MODULE_13__["default"]),
-        left: createImage(_img_spriteJumpLeft_png__WEBPACK_IMPORTED_MODULE_12__["default"])
+      attaque: {
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteAttaque_png__WEBPACK_IMPORTED_MODULE_22__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteAttaqueLeft_png__WEBPACK_IMPORTED_MODULE_23__["default"])
+      },
+      shoot: {
+        right: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteShotRight_png__WEBPACK_IMPORTED_MODULE_13__["default"]),
+        left: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteShotLeft_png__WEBPACK_IMPORTED_MODULE_14__["default"])
       }
     };
     this.currentSprite = this.sprites.stand.right;
+    this.frameTimer = 0;
+    this.frameInterval = 20;
+    this.attacking = false;
+    this.invincible = false;
+    this.powerUps = {
+      Bow: false
+    };
+    this.opacity = 1;
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(Player, [{
     key: "draw",
     value: function draw() {
+      c.save();
+      c.globalAlpha = this.opacity;
+      c.fillStyle = 'rgba(255, 0, 0, .2)';
+      c.fillRect(this.position.x, this.position.y, this.width, this.height);
       c.drawImage(this.currentSprite, 128 * this.frames, 0, 128, 128, this.position.x, this.position.y, this.width, this.height);
+      c.restore();
+    }
+  }, {
+    key: "updateDirection",
+    value: function updateDirection() {
+      if (keys.left.pressed) {
+        this.direction = 'left';
+      } else if (keys.right.pressed) {
+        this.direction = 'right';
+      }
+    }
+  }, {
+    key: "drawIcon",
+    value: function drawIcon() {
+      if (this.powerUps.Bow) {
+        c.drawImage(this.iconImage, 10, 10, 50, 50);
+      }
+    }
+  }, {
+    key: "attack",
+    value: function attack() {
+      var _this = this;
+
+      if (!this.attacking) {
+        this.attacking = true;
+        var currentDirection = this.currentSprite === this.sprites.stand.left || this.currentSprite === this.sprites.run.left ? 'left' : 'right';
+
+        if (this.powerUps.Bow) {
+          this.currentSprite = this.sprites.shoot[currentDirection];
+        } else {
+          this.currentSprite = this.sprites.attaque[currentDirection];
+        }
+
+        this.frames = 0;
+        ennemies.forEach(function (ennemy) {
+          if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isColliding"])(_this, ennemy) && Math.abs(_this.position.x - ennemy.position.x) < 120) {
+            ennemy.die();
+          }
+        });
+        setTimeout(function () {
+          _this.attacking = false;
+
+          if (keys.left.pressed) {
+            _this.currentSprite = _this.sprites.run.left;
+          } else if (keys.right.pressed) {
+            _this.currentSprite = _this.sprites.run.right;
+          } else {
+            _this.currentSprite = _this.sprites.stand[currentDirection];
+          }
+        }, 900);
+      }
+    }
+  }, {
+    key: "shootArrow",
+    value: function shootArrow() {
+      if (this.powerUps.Bow) {
+        var arrowDirection = this.direction === 'right' ? 1 : -1;
+        var arrowStartPositionX = this.position.x + this.width / 2 + (arrowDirection === 1 ? 30 : -110);
+        var arrowStartPositionY = this.position.y + this.height / 2 - 5;
+        arrows.push(new Arrow({
+          position: {
+            x: arrowStartPositionX,
+            y: arrowStartPositionY
+          },
+          velocity: {
+            x: 8 * arrowDirection,
+            y: 0
+          }
+        }));
+      }
     }
   }, {
     key: "update",
     value: function update() {
-      this.frames++;
-      if (this.frames > 9) this.frames = 0;
+      this.updateDirection();
+
+      if (this.attacking) {
+        if (this.frameTimer >= this.frameInterval) {
+          this.frameTimer = 0;
+          this.frames = (this.frames + 1) % 5;
+        }
+
+        this.frameTimer++;
+      } else {
+        this.frameTimer++;
+
+        if (this.frameTimer >= this.frameInterval) {
+          this.frameTimer = 0;
+          this.frames = (this.frames + 1) % 5;
+        }
+      }
+
       this.draw(); // gestion jump
 
       if (this.isJumping && this.position.y + this.height >= canvas.height - 500) {
@@ -806,19 +1115,11 @@ var Player = /*#__PURE__*/function () {
       this.position.y += this.velocity.y;
       this.position.x += this.velocity.x; // gravité
 
-      if (this.position.y + this.height < canvas.height) {
-        this.velocity.y += gravity;
-      }
-    }
-  }, {
-    key: "drawCollisionBox",
-    value: function drawCollisionBox() {
-      c.strokeStyle = 'red';
-      c.strokeRect(this.position.x + 75, // Décalage vers la droite pour ajuster la position
-      this.position.y + 85, // Décalage vers le bas pour ajuster la position
-      this.width - 150, // Largeur réduite pour correspondre à la taille du sprite
-      this.height - 80 // Hauteur réduite pour correspondre à la taille du sprite
-      );
+      if (this.position.y + this.height + this.velocity.y <= canvas.height) this.velocity.y += gravity;
+
+      if (this.invincible) {
+        if (this.opacity === 1) this.opacity = 0;else this.opacity = 1;
+      } else this.opacity = 1;
     }
   }]);
 
@@ -829,7 +1130,9 @@ var Platform = /*#__PURE__*/function () {
   function Platform(_ref) {
     var x = _ref.x,
         y = _ref.y,
-        image = _ref.image;
+        image = _ref.image,
+        block = _ref.block,
+        text = _ref.text;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, Platform);
 
@@ -837,22 +1140,32 @@ var Platform = /*#__PURE__*/function () {
       x: x,
       y: y
     };
+    this.velocity = {
+      x: 0
+    };
     this.image = image;
     this.width = image.width; // taille platforms
 
     this.height = image.height;
+    this.block = block;
+    this.text = text;
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(Platform, [{
     key: "draw",
     value: function draw() {
       c.drawImage(this.image, this.position.x, this.position.y);
+
+      if (this.text) {
+        c.fillStyle = 'red';
+        c.fillText(this.text, this.position.x, this.position.y);
+      }
     }
   }, {
-    key: "drawCollisionBox",
-    value: function drawCollisionBox() {
-      c.strokeStyle = 'blue';
-      c.strokeRect(this.position.x, this.position.y, this.width, this.height);
+    key: "update",
+    value: function update() {
+      this.draw();
+      this.position.x += this.velocity.x;
     }
   }]);
 
@@ -872,6 +1185,9 @@ var GenericObject = /*#__PURE__*/function () {
       x: x,
       y: y
     };
+    this.velocity = {
+      x: 0
+    };
     this.image = image;
     this.width = image.width;
     this.height = image.height;
@@ -883,10 +1199,10 @@ var GenericObject = /*#__PURE__*/function () {
       c.drawImage(this.image, this.position.x, this.position.y);
     }
   }, {
-    key: "drawCollisionBox",
-    value: function drawCollisionBox() {
-      c.strokeStyle = 'green';
-      c.strokeRect(this.position.x, this.position.y, this.width, this.height);
+    key: "update",
+    value: function update() {
+      this.draw();
+      this.position.x += this.velocity.x;
     }
   }]);
 
@@ -896,7 +1212,12 @@ var GenericObject = /*#__PURE__*/function () {
 var Ennemy = /*#__PURE__*/function () {
   function Ennemy(_ref3) {
     var position = _ref3.position,
-        velocity = _ref3.velocity;
+        velocity = _ref3.velocity,
+        _ref3$distance = _ref3.distance,
+        distance = _ref3$distance === void 0 ? {
+      limit: 200,
+      traveled: 0
+    } : _ref3$distance;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, Ennemy);
 
@@ -908,54 +1229,186 @@ var Ennemy = /*#__PURE__*/function () {
       x: velocity.x,
       y: velocity.y
     };
-    this.width = 50;
-    this.height = 50;
+    this.width = 200;
+    this.height = 200;
+    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteEnemy_png__WEBPACK_IMPORTED_MODULE_19__["default"]);
+    this.frames = 0;
+    this.direction = 'left';
+    this.distance = distance;
+    this.frameTimer = 0;
+    this.frameInterval = 20;
+    this.dying = false;
+    this.collidable = true;
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(Ennemy, [{
     key: "draw",
     value: function draw() {
-      c.fillStyle = 'red';
-      c.fillRect(this.position.x, this.position.y, this.width, this.height);
+      c.drawImage(this.image, 128 * this.frames, 0, 128, 128, this.position.x, this.position.y, this.width, this.height);
     }
   }, {
     key: "update",
     value: function update() {
+      if (this.dying) {
+        this.velocity.x = 0;
+        this.velocity.y = 0;
+        this.frameTimer++;
+
+        if (this.frameTimer >= this.frameInterval) {
+          this.frameTimer = 0;
+          this.frames = (this.frames + 1) % 12;
+        }
+      } else {
+        this.frameTimer++;
+
+        if (this.frameTimer >= this.frameInterval) {
+          this.frameTimer = 0;
+          this.frames = (this.frames + 1) % 5;
+        }
+
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
+        if (this.position.y + this.height + this.velocity.y <= canvas.height) this.velocity.y += gravity; // marche avant-arrière
+
+        this.distance.traveled += Math.abs(this.velocity.x);
+
+        if (this.distance.traveled > this.distance.limit) {
+          this.distance.traveled = 0;
+          this.velocity.x = -this.velocity.x;
+          this.direction = this.direction === 'left' ? 'right' : 'left';
+          this.image = this.direction === 'left' ? Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteEnemy_png__WEBPACK_IMPORTED_MODULE_19__["default"]) : Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteEnemyReverse_png__WEBPACK_IMPORTED_MODULE_20__["default"]);
+        }
+      }
+
       this.draw();
-      this.position.x += this.velocity.x;
-      this.position.y += this.velocity.y;
-      if (this.position.y + this.height + this.velocity.y <= canvas.height) this.velocity.y += gravity;
+    }
+  }, {
+    key: "die",
+    value: function die() {
+      var _this2 = this;
+
+      this.dying = true;
+      this.collidable = false;
+      this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_SpriteEnemyDeath_png__WEBPACK_IMPORTED_MODULE_21__["default"]);
+      setTimeout(function () {
+        var index = ennemies.indexOf(_this2);
+
+        if (index !== -1) {
+          ennemies.splice(index, 1);
+        }
+      }, 1000);
     }
   }]);
 
   return Ennemy;
 }();
 
-function createImage(imageSrc) {
-  var image = new Image();
-  image.src = imageSrc;
-  return image;
-}
+var Bow = /*#__PURE__*/function () {
+  function Bow(_ref4) {
+    var position = _ref4.position,
+        velocity = _ref4.velocity;
 
-function createImageAsync(imageSrc) {
-  return new Promise(function (resolve) {
-    var image = new Image();
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, Bow);
 
-    image.onload = function () {
-      resolve(image);
+    this.position = {
+      x: position.x,
+      y: position.y
     };
+    this.velocity = {
+      x: velocity.x,
+      y: velocity.y
+    };
+    this.width = 64;
+    this.height = 64;
+    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_spriteBow_png__WEBPACK_IMPORTED_MODULE_24__["default"]);
+    this.frames = 0;
+    this.frameTimer = 0;
+    this.frameInterval = 30;
+  }
 
-    image.src = imageSrc;
-  });
-}
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(Bow, [{
+    key: "draw",
+    value: function draw() {
+      c.drawImage(this.image, 32 * this.frames, 0, 32, 32, this.position.x, this.position.y, this.width, this.height);
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      if (this.dying) {
+        this.velocity.x = 0;
+        this.velocity.y = 0;
+        this.frameTimer++;
+
+        if (this.frameTimer >= this.frameInterval) {
+          this.frameTimer = 0;
+          this.frames = (this.frames + 1) % 12;
+        }
+      } else {
+        this.frameTimer++;
+
+        if (this.frameTimer >= this.frameInterval) {
+          this.frameTimer = 0;
+          this.frames = (this.frames + 1) % 5;
+        }
+
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
+        if (this.position.y + this.height + this.velocity.y <= canvas.height) this.velocity.y += gravity;
+      }
+
+      this.draw();
+    }
+  }]);
+
+  return Bow;
+}();
+
+var Arrow = /*#__PURE__*/function () {
+  function Arrow(_ref5) {
+    var position = _ref5.position,
+        velocity = _ref5.velocity;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, Arrow);
+
+    this.position = {
+      x: position.x,
+      y: position.y
+    };
+    this.velocity = {
+      x: velocity.x,
+      y: velocity.y
+    };
+    this.width = 64;
+    this.height = 64;
+    this.image = Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_arrow_png__WEBPACK_IMPORTED_MODULE_12__["default"]);
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(Arrow, [{
+    key: "draw",
+    value: function draw() {
+      c.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      this.position.x += this.velocity.x;
+      this.position.y += this.velocity.y;
+      this.draw();
+    }
+  }]);
+
+  return Arrow;
+}();
 
 var platformImage;
 var platformSmallTallImage;
-var player = new Player(); // array platforms + positions
-
+var blockTriImage;
+var player = new Player();
 var platforms = [];
 var genericObjects = [];
 var ennemies = [];
+var bows = [];
+var arrows = [];
 var lastKey;
 var keys = {
   right: {
@@ -970,12 +1423,6 @@ var keys = {
 };
 var scrollOffset = 0;
 
-function isOnTopOfPlatform(_ref4) {
-  var object = _ref4.object,
-      platform = _ref4.platform;
-  return object.position.x + 75 < platform.position.x + platform.width && object.position.x + object.width - 75 > platform.position.x && object.position.y < platform.position.y + platform.height && object.position.y + object.height > platform.position.y && object.position.y < platform.position.y && object.velocity.y >= 0;
-}
-
 function init() {
   return _init.apply(this, arguments);
 }
@@ -986,20 +1433,49 @@ function _init() {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return createImageAsync(_img_platform_png__WEBPACK_IMPORTED_MODULE_4__["default"]);
+            timer = 0;
+            _context.next = 3;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platform_png__WEBPACK_IMPORTED_MODULE_5__["default"]);
 
-          case 2:
+          case 3:
             platformImage = _context.sent;
-            _context.next = 5;
-            return createImageAsync(_img_platformSmallTall_png__WEBPACK_IMPORTED_MODULE_7__["default"]);
+            _context.next = 6;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_platformSmallTall_png__WEBPACK_IMPORTED_MODULE_8__["default"]);
 
-          case 5:
+          case 6:
             platformSmallTallImage = _context.sent;
+            _context.next = 9;
+            return Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImageAsync"])(_img_blockTri_png__WEBPACK_IMPORTED_MODULE_10__["default"]);
+
+          case 9:
+            blockTriImage = _context.sent;
+            bows = [new Bow({
+              position: {
+                x: 400,
+                y: 200
+              },
+              velocity: {
+                x: 0,
+                y: 0
+              }
+            })];
             player = new Player();
             ennemies = [new Ennemy({
               position: {
-                x: 400,
+                x: 800,
+                y: 100
+              },
+              velocity: {
+                x: -0.3,
+                y: 0
+              },
+              distance: {
+                limit: 300,
+                traveled: 0
+              }
+            }), new Ennemy({
+              position: {
+                x: 1400,
                 y: 100
               },
               velocity: {
@@ -1023,32 +1499,40 @@ function _init() {
             }), new Platform({
               x: platformImage.width * 2 + 100,
               y: 470,
-              image: platformImage
+              image: platformImage,
+              block: true
             }), new Platform({
               x: platformImage.width * 3 + 300,
               y: 470,
-              image: platformImage
+              image: platformImage,
+              block: true
             }), new Platform({
               x: platformImage.width * 4 + 300 - 2,
               y: 470,
               image: platformImage
             }), new Platform({
-              x: platformImage.width * 5 + 600 - 2,
+              x: platformImage.width * 5 + 640 - 2,
               y: 470,
-              image: platformImage
+              image: platformImage,
+              block: true
+            }), new Platform({
+              x: 600,
+              y: 100,
+              image: blockTriImage,
+              block: true
             })];
             genericObjects = [new GenericObject({
               x: -1,
               y: -1,
-              image: createImage(_img_background_png__WEBPACK_IMPORTED_MODULE_6__["default"])
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_background_png__WEBPACK_IMPORTED_MODULE_7__["default"])
             }), new GenericObject({
               x: -1,
               y: -1,
-              image: createImage(_img_hills_png__WEBPACK_IMPORTED_MODULE_5__["default"])
+              image: Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["createImage"])(_img_hills_png__WEBPACK_IMPORTED_MODULE_6__["default"])
             })];
             scrollOffset = 0;
 
-          case 11:
+          case 16:
           case "end":
             return _context.stop();
         }
@@ -1058,23 +1542,76 @@ function _init() {
   return _init.apply(this, arguments);
 }
 
+var timerDisplay = document.createElement('div');
+timerDisplay.id = 'timerDisplay';
+timerDisplay.style.position = 'absolute';
+timerDisplay.style.fontFamily = 'Genjiro';
+timerDisplay.style.top = '25%';
+timerDisplay.style.left = '70%';
+timerDisplay.style.transform = 'translateX(-50%)';
+timerDisplay.style.fontSize = '24px';
+document.body.appendChild(timerDisplay);
+var timer = 0;
+
+function updateTimer() {
+  var seconds = Math.floor(timer / 144);
+  timerDisplay.textContent = "Timer: ".concat(seconds);
+}
+
 function animate() {
   requestAnimationFrame(animate);
+
+  if (gameStarted) {
+    timer++;
+    updateTimer();
+  }
+
   c.fillStyle = 'white';
   c.fillRect(0, 0, canvas.width, canvas.height);
   genericObjects.forEach(function (genericObject) {
-    genericObject.draw();
-    genericObject.drawCollisionBox(); // Dessine la zone de collision pour le débogage
+    genericObject.update();
+    genericObject.velocity.x = 0;
   });
   platforms.forEach(function (platform) {
-    platform.draw();
-    platform.drawCollisionBox(); // Dessine la zone de collision pour le débogage
+    platform.update();
+    platform.velocity.x = 0;
   });
-  ennemies.forEach(function (Ennemy) {
-    Ennemy.update();
+  bows.forEach(function (Bow, i) {
+    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["objectsTouch"])({
+      object1: player,
+      object2: Bow
+    })) {
+      setTimeout(function () {
+        bows.splice(i, 1);
+        player.powerUps.Bow = true;
+      }, 0);
+    } else Bow.update();
   });
+  ennemies.forEach(function (ennemy, index) {
+    ennemy.update();
+
+    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["collisionTop"])({
+      object1: player,
+      object2: ennemy
+    })) {
+      if (!ennemy.dying) {
+        player.velocity.y -= 40;
+        ennemy.die();
+      }
+    } else if (ennemy.collidable && player.position.x + player.width - 140 >= ennemy.position.x && player.position.y + player.height - 128 >= ennemy.position.y && player.position.x <= ennemy.position.x + ennemy.width - 140) {
+      if (player.powerUps.Bow) {
+        player.invincible = true;
+        player.powerUps.Bow = false;
+        setTimeout(function () {
+          player.invincible = false;
+        }, 1000);
+      } else if (!player.invincible) init();
+    }
+  });
+  player.updateDirection();
   player.update();
-  player.drawCollisionBox(); // Dessine la zone de collision pour le débogage
+  player.drawIcon();
+  var hitSide = false;
 
   if (keys.right.pressed && player.position.x < 400) {
     player.velocity.x = player.speed;
@@ -1084,30 +1621,83 @@ function animate() {
     player.velocity.x = 0; // code de scroll
 
     if (keys.right.pressed) {
-      scrollOffset += player.speed;
-      platforms.forEach(function (platform) {
-        platform.position.x -= player.speed;
-      });
-      genericObjects.forEach(function (genericObject) {
-        genericObject.position.x -= player.speed * .66;
-      });
-      ennemies.forEach(function (Ennemy) {
-        Ennemy.position.x -= player.speed;
-      });
+      for (var i = 0; i < platforms.length; i++) {
+        var _platform = platforms[i];
+        _platform.velocity.x = -player.speed;
+
+        if (_platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitSideOfPlatform"])({
+          object: player,
+          platform: _platform
+        })) {
+          platforms.forEach(function (platform) {
+            platform.velocity.x = 0;
+          });
+          hitSide = true;
+          break;
+        }
+      }
+
+      if (!hitSide) {
+        scrollOffset += player.speed;
+        genericObjects.forEach(function (genericObject) {
+          genericObject.velocity.x = -player.speed * 0.66;
+        });
+        ennemies.forEach(function (ennemy) {
+          ennemy.position.x -= player.speed;
+        });
+        bows.forEach(function (Bow) {
+          Bow.position.x -= player.speed;
+        });
+      }
     } else if (keys.left.pressed && scrollOffset > 0) {
-      scrollOffset -= player.speed;
-      platforms.forEach(function (platform) {
-        platform.position.x += player.speed;
-      });
-      genericObjects.forEach(function (genericObject) {
-        genericObject.position.x += player.speed * .66;
+      for (var _i = 0; _i < platforms.length; _i++) {
+        var _platform2 = platforms[_i];
+        _platform2.velocity.x = player.speed;
+
+        if (_platform2.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitSideOfPlatform"])({
+          object: player,
+          platform: _platform2
+        })) {
+          platforms.forEach(function (platform) {
+            platform.velocity.x = 0;
+          });
+          hitSide = true;
+          break;
+        }
+      }
+
+      if (!hitSide) {
+        scrollOffset -= player.speed;
+        genericObjects.forEach(function (genericObject) {
+          genericObject.velocity.x = player.speed * .66;
+        });
+        ennemies.forEach(function (ennemy) {
+          ennemy.position.x += player.speed;
+        });
+        bows.forEach(function (Bow) {
+          Bow.position.x += player.speed;
+        });
+      }
+    }
+  }
+
+  arrows.forEach(function (arrow, index) {
+    arrow.update();
+
+    if (arrow.position.x > canvas.width || arrow.position.y > canvas.height) {
+      arrows.splice(index, 1);
+    } else {
+      ennemies.forEach(function (ennemy) {
+        if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isColliding"])(arrow, ennemy)) {
+          ennemy.die();
+          arrows.splice(index, 1);
+        }
       });
     }
-  } // collision platform
-
+  }); // collision platform
 
   platforms.forEach(function (platform) {
-    if (isOnTopOfPlatform({
+    if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isOnTopOfPlatform"])({
       object: player,
       platform: platform
     })) {
@@ -1115,22 +1705,46 @@ function animate() {
       player.position.y = platform.position.y - player.height;
     }
 
-    ennemies.forEach(function (Ennemy) {
-      if (isOnTopOfPlatform({
-        object: Ennemy,
+    if (platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitBottomOfPlatform"])({
+      object: player,
+      platform: platform
+    })) {
+      player.velocity.y = -player.velocity.y;
+    }
+
+    if (platform.block && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["hitSideOfPlatform"])({
+      object: player,
+      platform: platform
+    })) {
+      player.velocity.x = 0;
+    }
+
+    ennemies.forEach(function (ennemy) {
+      if (ennemy.collidable && Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isOnTopOfPlatform"])({
+        object: ennemy,
         platform: platform
-      })) Ennemy.velocity.y = 0;
+      })) {
+        ennemy.velocity.y = 0;
+      }
+    });
+    bows.forEach(function (Bow) {
+      if (Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["isOnTopOfPlatform"])({
+        object: Bow,
+        platform: platform
+      })) {
+        Bow.velocity.y = 0;
+      }
     });
   });
 
-  if (keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.run.right) {
+  if (keys.right.pressed && lastKey === 'right' && !player.attacking && player.currentSprite !== player.sprites.run.right) {
     player.frames = 1;
     player.currentSprite = player.sprites.run.right;
-  } else if (keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.run.left) {
+  } else if (keys.left.pressed && lastKey === 'left' && !player.attacking && player.currentSprite !== player.sprites.run.left) {
     player.currentSprite = player.sprites.run.left;
-  } else if (!keys.left.pressed && lastKey === 'left' && player.currentSprite !== player.sprites.stand.left) {
+  } else if (!keys.left.pressed && lastKey === 'left' && !player.attacking && player.currentSprite !== player.sprites.stand.left) {
     player.currentSprite = player.sprites.stand.left;
-  } else if (!keys.right.pressed && lastKey === 'right' && player.currentSprite !== player.sprites.stand.right) {
+  } else if (!keys.right.pressed && lastKey === 'right' && !player.attacking && player.currentSprite !== player.sprites.stand.right) {
     player.currentSprite = player.sprites.stand.right;
   }
 
@@ -1145,65 +1759,185 @@ function animate() {
 }
 
 init();
-animate();
-addEventListener('keydown', function (_ref5) {
-  var keyCode = _ref5.keyCode;
+animate(); // Fonction keydown
 
-  switch (keyCode) {
-    case 81:
-      console.log('left');
-      keys.left.pressed = true;
-      lastKey = 'left';
-      break;
-
-    case 83:
-      console.log('down');
-      break;
-
-    case 68:
-      console.log('right');
-      keys.right.pressed = true;
-      lastKey = 'right';
-      break;
-
-    case 90:
-      console.log('up');
-      keys.up.pressed = true;
-
-      if (!player.isJumping && Date.now() - player.lastJumpTime > 350) {
-        player.isJumping = true;
-        player.lastJumpTime = Date.now();
-      }
-
-      lastKey = 'up';
-      break;
-  }
-});
-addEventListener('keyup', function (_ref6) {
+addEventListener('keydown', function (_ref6) {
   var keyCode = _ref6.keyCode;
+  if (!gameStarted) return;
 
-  switch (keyCode) {
-    case 81:
-      console.log('left');
-      keys.left.pressed = false;
-      player.currentSprite = player.sprites.stand.left;
-      break;
+  if (!player.attacking) {
+    switch (keyCode) {
+      case 81:
+        // Q - Gauche
+        keys.left.pressed = true;
+        lastKey = 'left';
+        player.currentSprite = player.sprites.run.left;
+        break;
 
-    case 83:
-      console.log('down');
-      break;
+      case 83:
+        // S - Bas
+        break;
 
-    case 68:
-      console.log('right');
-      keys.right.pressed = false;
-      break;
+      case 68:
+        // D - Droite
+        keys.right.pressed = true;
+        lastKey = 'right';
+        player.currentSprite = player.sprites.run.right;
+        break;
 
-    case 90:
-      console.log('up');
-      keys.up.pressed = false;
-      break;
+      case 90:
+        // Z - Haut
+        keys.up.pressed = true;
+
+        if (!player.isJumping && Date.now() - player.lastJumpTime > 600) {
+          player.isJumping = true;
+          player.lastJumpTime = Date.now();
+        }
+
+        lastKey = 'up';
+        break;
+
+      case 32:
+        // Espace - Attaque
+        player.attack();
+        player.shootArrow(); // Empêcher le mouvement pendant l'attaque
+
+        keys.left.pressed = false;
+        keys.right.pressed = false;
+        break;
+    }
+  }
+}); // Fonction keyup
+
+addEventListener('keyup', function (_ref7) {
+  var keyCode = _ref7.keyCode;
+
+  if (!player.attacking) {
+    switch (keyCode) {
+      case 81:
+        // Q - Gauche
+        keys.left.pressed = false;
+
+        if (keys.right.pressed) {
+          player.currentSprite = player.sprites.run.right;
+          lastKey = 'right';
+        } else {
+          player.currentSprite = player.sprites.stand.left;
+          lastKey = 'left';
+        }
+
+        break;
+
+      case 83:
+        // S - Bas
+        break;
+
+      case 68:
+        // D - Droite
+        keys.right.pressed = false;
+
+        if (keys.left.pressed) {
+          player.currentSprite = player.sprites.run.left;
+          lastKey = 'left';
+        } else {
+          player.currentSprite = player.sprites.stand.right;
+          lastKey = 'right';
+        }
+
+        break;
+
+      case 90:
+        // Z - Haut
+        keys.up.pressed = false;
+        break;
+    }
   }
 });
+
+/***/ }),
+
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/*! exports provided: isOnTopOfPlatform, collisionTop, isColliding, createImage, createImageAsync, hitBottomOfPlatform, hitSideOfPlatform, objectsTouch */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isOnTopOfPlatform", function() { return isOnTopOfPlatform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "collisionTop", function() { return collisionTop; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isColliding", function() { return isColliding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createImage", function() { return createImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createImageAsync", function() { return createImageAsync; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hitBottomOfPlatform", function() { return hitBottomOfPlatform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hitSideOfPlatform", function() { return hitSideOfPlatform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "objectsTouch", function() { return objectsTouch; });
+function randomIntFromRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function randomColor(colors) {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function distance(x1, y1, x2, y2) {
+  var xDist = x2 - x1;
+  var yDist = y2 - y1;
+  return Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2));
+}
+
+function isOnTopOfPlatform(_ref) {
+  var object = _ref.object,
+      platform = _ref.platform;
+  return object.position.x + 75 < platform.position.x + platform.width && object.position.x + object.width - 75 > platform.position.x && object.position.y < platform.position.y + platform.height && object.position.y + object.height > platform.position.y && object.position.y < platform.position.y && object.velocity.y >= 0;
+}
+function collisionTop(_ref2) {
+  var object1 = _ref2.object1,
+      object2 = _ref2.object2;
+  return object2.collidable && // Check if the enemy is collidable
+  object1.position.x + 75 < object2.position.x + object2.width && object1.position.x + object1.width - 75 > object2.position.x && object1.position.y + object1.height <= object2.position.y && object1.position.y + object1.height + object1.velocity.y >= object2.position.y;
+}
+function isColliding(rect1, rect2) {
+  return rect1.position.x < rect2.position.x + rect2.width && rect1.position.x + rect1.width > rect2.position.x && rect1.position.y < rect2.position.y + rect2.height && rect1.position.y + rect1.height > rect2.position.y;
+}
+function createImage(imageSrc) {
+  var image = new Image();
+  image.src = imageSrc;
+  return image;
+}
+function createImageAsync(imageSrc) {
+  return new Promise(function (resolve) {
+    var image = new Image();
+
+    image.onload = function () {
+      resolve(image);
+    };
+
+    image.src = imageSrc;
+  });
+}
+function hitBottomOfPlatform(_ref3) {
+  var object = _ref3.object,
+      platform = _ref3.platform;
+  var verticalAdjustment = -50;
+  var horizontalAdjustment = 90;
+  return object.position.y <= platform.position.y + platform.height + verticalAdjustment && object.position.y - object.velocity.y >= platform.position.y + platform.height + verticalAdjustment && object.position.x + object.width >= platform.position.x + horizontalAdjustment && object.position.x <= platform.position.x + platform.width - horizontalAdjustment;
+}
+function hitSideOfPlatform(_ref4) {
+  var object = _ref4.object,
+      platform = _ref4.platform;
+  var verticalAdjustment = -50;
+  var horizontalAdjustment = -90;
+  return object.position.x + object.width + object.velocity.x - platform.velocity.x >= platform.position.x - horizontalAdjustment && object.position.x + object.velocity.x <= platform.position.x + platform.width + horizontalAdjustment && object.position.y <= platform.position.y + platform.height + verticalAdjustment && object.position.y + object.height >= platform.position.y - verticalAdjustment;
+}
+function objectsTouch(_ref5) {
+  var object1 = _ref5.object1,
+      object2 = _ref5.object2;
+  var verticalAdjustment = -50;
+  var horizontalAdjustment = -90;
+  return object1.position.x + object1.width >= object2.position.x - horizontalAdjustment && object1.position.x <= object2.position.x + object2.width + horizontalAdjustment && object1.position.y + object1.height > +object2.position.x + verticalAdjustment && object1.position.y <= object2.position.x + object2.height - verticalAdjustment;
+}
 
 /***/ })
 
