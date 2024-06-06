@@ -33,13 +33,24 @@ module.exports = {
         ]
       },
       {
+        test: /\.(mp3|wav)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'audio'
+            }
+          }
+        ]
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[hash].[ext]',
-              outputPath: 'fonts',
+              outputPath: 'font',
             }
           }
         ]

@@ -94,3 +94,16 @@ export function objectsTouch({object1, object2}) {
   )
 }
 
+export function createParticles(position, color) {
+  const particles = [];
+  for (let i = 0; i < 10; i++) {
+    particles.push(new Particle({
+      position: { x: position.x, y: position.y },
+      velocity: { x: (Math.random() - 0.5) * 2, y: (Math.random() - 0.5) * 2 },
+      radius: Math.random() * 3,
+      color: color
+    }));
+  }
+  return particles;
+}
+

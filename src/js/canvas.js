@@ -31,6 +31,7 @@ import spriteAttaqueRight from '../img/spriteAttaque.png'
 import spriteAttaqueLeft from '../img/spriteAttaqueLeft.png'
 import spriteBow from '../img/spriteBow.png'
 
+import { audio } from './audio.js'
 
 import logo from '../img/logo.svg'
 import Genjiro from '../font/Genjiro.otf';
@@ -83,13 +84,11 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-const gameMusic = document.getElementById('gameMusic');
-const hitSound = new Audio('../sounds/hit.mp3')
-
-gameMusic.volume = 0.35;
 
 startButton.addEventListener('click', () => {
-  gameMusic.play();
+  audio.audioLevel.volume = audio.audioLevel.volume * 0.03
+  audio.audioLevel.loop = true;
+  audio.audioLevel.play();
 });
 
 const canvas = document.querySelector('canvas')
@@ -158,9 +157,6 @@ class Player {
 
   draw() {
     c.save()
-    c.globalAlpha = this.opacity
-    c.fillStyle = 'rgba(255, 0, 0, .2)'
-    c.fillRect(this.position.x, this.position.y, this.width, this.height)
     c.drawImage(
       this.currentSprite,
       128 * this.frames,
@@ -190,54 +186,71 @@ class Player {
   }
 
   attack() {
+    audio.audioKatana.play();
     function createHitImpact(target) {
-      gsap.to(target.position, {
-        x: target.position.x - 10,
-        duration: 0.05,
-        yoyo: true,
-        repeat: 5
-      });
+        gsap.to(target.position, {
+            x: target.position.x - 10,
+            duration: 0.05,
+            yoyo: true,
+            repeat: 5
+        });
     }
+
+    // Fonction pour faire trembler l'écran
+    function screenShake() {
+        gsap.to(canvas, {
+            x: Math.random() * 10 - 5, // Tremblement horizontal aléatoire
+            y: Math.random() * 10 - 5, // Tremblement vertical aléatoire
+            duration: 0.1, // Durée du tremblement
+            repeat: 5, // Nombre de répétitions
+            yoyo: true, // Effet de retour
+            ease: "power1.out" // Effet d'accélération
+        });
+    }
+
     if (!this.attacking) {
-      this.attacking = true;
-      const currentDirection = this.currentSprite === this.sprites.stand.left || this.currentSprite === this.sprites.run.left ? 'left' : 'right';
-      if (this.powerUps.Bow) {
-        this.currentSprite = this.sprites.shoot[currentDirection];
-        this.frames = 10
-      } else {
-        this.currentSprite = this.sprites.attaque[currentDirection];
-        this.frames = 0
-      }
-
-      ennemies.forEach(ennemy => {
-        if (
-            isColliding(this, ennemy) &&
-            Math.abs(this.position.x - ennemy.position.x) < 120
-        ) {
-            ennemy.die()
-            createHitImpact(ennemy)
-            hitSound.play()
-        }
-    })
-
-      setTimeout(() => {
-        this.attacking = false;
-        if (keys.left.pressed) {
-          this.currentSprite = this.sprites.run.left;
-        } else if (keys.right.pressed) {
-          this.currentSprite = this.sprites.run.right;
+        this.attacking = true;
+        const currentDirection = this.currentSprite === this.sprites.stand.left || this.currentSprite === this.sprites.run.left ? 'left' : 'right';
+        if (this.powerUps.Bow) {
+            this.currentSprite = this.sprites.shoot[currentDirection];
+            this.frames = 10;
         } else {
-          this.currentSprite = this.sprites.stand[currentDirection];
+            this.currentSprite = this.sprites.attaque[currentDirection];
+            this.frames = 0;
         }
-      }, 600);
+
+        ennemies.forEach(ennemy => {
+            if (
+                isColliding(this, ennemy) &&
+                Math.abs(this.position.x - ennemy.position.x) < 120
+            ) {
+                ennemy.die();
+                createHitImpact(ennemy);
+                audio.audioHit.volume = audio.audioHit.volume * 0.5;
+                audio.audioHit.play();
+                screenShake(); // Appel de la fonction pour faire trembler l'écran
+            }
+        });
+
+        setTimeout(() => {
+            this.attacking = false;
+            if (keys.left.pressed) {
+                this.currentSprite = this.sprites.run.left;
+            } else if (keys.right.pressed) {
+                this.currentSprite = this.sprites.run.right;
+            } else {
+                this.currentSprite = this.sprites.stand[currentDirection];
+            }
+        }, 600);
     }
-  }
+}
 
   shootArrow() {
     if (this.powerUps.Bow) {
       let arrowDirection = this.direction === 'right' ? 1 : -1
       let arrowStartPositionX = this.position.x + this.width / 2 + (arrowDirection === 1 ? 30 : -110)
       let arrowStartPositionY = this.position.y + this.height / 2 - 5
+      audio.audioBow.play()
       arrows.push(new Arrow({
         position: { x: arrowStartPositionX, y: arrowStartPositionY },
         velocity: { x: 8 * arrowDirection, y: 0 }
@@ -267,6 +280,7 @@ class Player {
     // gestion jump
     if (this.isJumping && this.position.y + this.height >= canvas.height - 500) {
       this.velocity.y = -25
+      audio.audioJump.play();
       this.isJumping = false
     }
   
@@ -419,6 +433,8 @@ class Ennemy {
     this.dying = true
     this.collidable = false
     this.image = createImage(spriteEnemyDeath)
+    score += 100
+    updateScore()
     setTimeout(() => {
       const index = ennemies.indexOf(this)
       if (index !== -1) {
@@ -564,7 +580,16 @@ async function init(){
     disableUserInput: false
   }
 
+  audio.audioLevel.play()
+
+  gravity = 1
+
+  player.velocity.x = 0
+  player.velocity.y = 0
+  lastKey = 'up'
+
   timer = 0
+  score = 0
   platformImage = await createImageAsync(platform)
   platformSmallTallImage = await createImageAsync(platformSmallTall)
   blockTriImage = await createImageAsync(blockTri)
@@ -905,6 +930,21 @@ async function init(){
     }
   })
 }
+let score = 0;
+
+const scoreDisplay = document.createElement('div');
+scoreDisplay.id = 'scoreDisplay';  
+scoreDisplay.style.position = 'absolute';
+scoreDisplay.style.fontFamily = 'Genjiro';
+scoreDisplay.style.top = '30%';
+scoreDisplay.style.left = '70%';
+scoreDisplay.style.transform = 'translateX(-50%)';
+scoreDisplay.style.fontSize = '24px';
+document.body.appendChild(scoreDisplay);
+
+function updateScore() {
+  scoreDisplay.textContent = `Score: ${score}`;
+}
 
 const timerDisplay = document.createElement('div');
 timerDisplay.id = 'timerDisplay';  
@@ -930,6 +970,7 @@ function animate() {
   if (gameStarted) {
     timer++;
     updateTimer();
+    updateScore()
   }
 
   c.fillStyle = 'white';
@@ -962,6 +1003,8 @@ function animate() {
       player.velocity.y = 0
       player.currentSprite = player.sprites.stand.right
       gravity = 0
+      audio.audioLevel.pause();
+      audio.audioComplete.play();
 
       gsap.to(player.position, {
         y: canvas.height - lgPlatformImage.height - player.height + 20, duration: 1,
@@ -975,10 +1018,8 @@ function animate() {
         x: canvas.width,
         duration: 2,
         ease: 'power1.in',
-        onComplete(){
-          setTimeout(() => {
-            init()
-          }, 2000);
+        onComplete: () => {
+          init()
         }
       })
     }
@@ -991,7 +1032,10 @@ function animate() {
     })) {
       setTimeout(() => {
         bows.splice(i, 1)
+        audio.audioBonus.volume = audio.audioBonus.volume * 0.2;
+        audio.audioBonus.play()
         player.powerUps.Bow = true
+        score += 300
       }, 0);
     } else Bow.update()
   })
@@ -1006,22 +1050,26 @@ function animate() {
       if (!ennemy.dying) {
         player.velocity.y -= 40
         ennemy.die()
+        audio.audioEnemyJump.volume = audio.audioEnemyJump.volume * 0.5;
+        audio.audioEnemyJump.play()
       }
     } else if (
       ennemy.collidable &&
       player.position.x + player.width - 140 >= ennemy.position.x &&
       player.position.y + player.height - 128 >= ennemy.position.y &&
-      player.position.x <= ennemy.position.x + ennemy.width - 140 &&
+      player.position.x <= ennemy.position.x + ennemy.width - 105 &&
       player.position.y <= ennemy.position.y + ennemy.height
     ) {
       if (player.powerUps.Bow) {
         player.invincible = true
         player.powerUps.Bow = false
+        audio.audioHurt.play()
 
         setTimeout(() => {
           player.invincible = false
         }, 1000);
       } else if (!player.invincible) {
+        audio.audioHurt.play()
         init();
       }
     }
@@ -1131,6 +1179,7 @@ function animate() {
     } else {
       ennemies.forEach(ennemy => {
         if (isColliding(arrow, ennemy)) {
+          audio.audioArrow.play()
           ennemy.die();
           arrows.splice(index, 1)
         }
