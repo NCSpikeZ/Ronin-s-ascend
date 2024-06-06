@@ -1,3 +1,4 @@
+import gsap from 'gsap'
 import {isOnTopOfPlatform, collisionTop, isColliding, createImage, createImageAsync, hitBottomOfPlatform, hitSideOfPlatform, objectsTouch} from './utils.js'
 
 import platform from '../img/platform.png'
@@ -6,6 +7,14 @@ import background from '../img/background.png'
 import platformSmallTall from '../img/platformSmallTall.png'
 import block from '../img/block.png'
 import blockTri from '../img/blockTri.png'
+import blockSix from '../img/blockSix.png'
+
+import mdPlatform from '../img/mdPlatform.png'
+import lgPlatform from '../img/lgPlatform.png'
+import tPlatform from '../img/tPlatform.png'
+import xtPlatform from '../img/xtPlatform.png'
+import flagPoleSprite from '../img/flagPole.png'
+
 import bowIcn from '../img/bowIcn.png'
 import arrowIcn from '../img/arrow.png'
 import spriteShootRight from '../img/spriteShotRight.png'
@@ -75,8 +84,9 @@ style.innerHTML = `
 document.head.appendChild(style);
 
 const gameMusic = document.getElementById('gameMusic');
+const hitSound = new Audio('../sounds/hit.mp3')
 
-gameMusic.volume = 0.5;
+gameMusic.volume = 0.35;
 
 startButton.addEventListener('click', () => {
   gameMusic.play();
@@ -95,7 +105,7 @@ startButton.addEventListener('click', () => {
 canvas.width = 1024
 canvas.height = 576
 
-const gravity = 1
+let gravity = 1
 
 class Player {
   constructor() {
@@ -180,22 +190,33 @@ class Player {
   }
 
   attack() {
+    function createHitImpact(target) {
+      gsap.to(target.position, {
+        x: target.position.x - 10,
+        duration: 0.05,
+        yoyo: true,
+        repeat: 5
+      });
+    }
     if (!this.attacking) {
       this.attacking = true;
       const currentDirection = this.currentSprite === this.sprites.stand.left || this.currentSprite === this.sprites.run.left ? 'left' : 'right';
       if (this.powerUps.Bow) {
-        this.currentSprite = this.sprites.shoot[currentDirection]
+        this.currentSprite = this.sprites.shoot[currentDirection];
+        this.frames = 10
       } else {
         this.currentSprite = this.sprites.attaque[currentDirection];
+        this.frames = 0
       }
-      this.frames = 0;
 
       ennemies.forEach(ennemy => {
         if (
             isColliding(this, ennemy) &&
             Math.abs(this.position.x - ennemy.position.x) < 120
         ) {
-            ennemy.die();
+            ennemy.die()
+            createHitImpact(ennemy)
+            hitSound.play()
         }
     })
 
@@ -208,7 +229,7 @@ class Player {
         } else {
           this.currentSprite = this.sprites.stand[currentDirection];
         }
-      }, 900);
+      }, 600);
     }
   }
 
@@ -283,11 +304,6 @@ class Platform {
 
   draw() {
     c.drawImage(this.image, this.position.x, this.position.y)
-
-    if (this.text) {
-      c.fillStyle = 'red'
-      c.fillText(this.text, this.position.x, this.position.y)
-    }
   }
 
   update() {
@@ -509,9 +525,15 @@ class Arrow {
   }
 }
 
+let lgPlatformImage
+let mdPlatformImage
+let tPlatformImage
+let xtPlatformImage
 let platformImage
 let platformSmallTallImage
 let blockTriImage
+let blockSixImage
+let blockImage
 
 let player = new Player()
 let platforms = []
@@ -534,18 +556,48 @@ const keys = {
 }
 
 let scrollOffset = 0
-
+let flagPole
+let flagPoleImage
+let game
 async function init(){
+  game = {
+    disableUserInput: false
+  }
+
   timer = 0
   platformImage = await createImageAsync(platform)
   platformSmallTallImage = await createImageAsync(platformSmallTall)
   blockTriImage = await createImageAsync(blockTri)
+  blockSixImage = await createImageAsync(blockSix)
+  blockImage = await createImageAsync(block)
+
+  lgPlatformImage = await createImageAsync(lgPlatform)
+  mdPlatformImage = await createImageAsync(mdPlatform)
+  tPlatformImage = await createImageAsync(tPlatform)
+  xtPlatformImage = await createImageAsync(xtPlatform)
+  flagPoleImage = await createImageAsync(flagPoleSprite)
+
+  flagPole = new GenericObject({
+    x: 10885,
+    y: canvas.height - lgPlatformImage.height - flagPoleImage.height + 22,
+    image : flagPoleImage
+  })
 
   bows = [
     new Bow({
       position: {
-        x: 400,
-        y: 200,
+        x: 730,
+        y: 220,
+      },
+      velocity: {
+        x:0,
+        y:0
+      }
+    }),
+    new Bow({
+      position: {
+        x: 4000,
+        y: 220,
       },
       velocity: {
         x:0,
@@ -558,47 +610,220 @@ async function init(){
   ennemies = [
     new Ennemy({
       position: {
-        x: 800, 
-        y: 100,
+        x: 700, 
+        y: 250,
       },
       velocity: {
         x: -0.3,
         y: 0,
       },
       distance: {
-        limit: 300,
+        limit: 250,
         traveled: 0
       }
     }),
     new Ennemy({
       position: {
-        x: 1400, 
-        y: 100,
+        x: 2000, 
+        y: 250,
+      },
+      velocity: {
+        x: -0.3,
+        y: 0,
+      },
+      distance: {
+        limit: 250,
+        traveled: 0
+      }
+    }),
+    new Ennemy({
+      position: {
+        x: 2320, 
+        y: -25,
+      },
+      distance: {
+        limit: 100,
+        traveled: 0
       },
       velocity: {
         x: -0.3,
         y: 0,
       }
-    })
+    }),
+    new Ennemy({
+      position: {
+        x: 3400, 
+        y: 250,
+      },
+      velocity: {
+        x: -0.3,
+        y: 0,
+      },
+      distance: {
+        limit: 250,
+        traveled: 0
+      }
+    }),
+    new Ennemy({
+      position: {
+        x: 3900, 
+        y: 250,
+      },
+      velocity: {
+        x: -0.3,
+        y: 0,
+      },
+      distance: {
+        limit: 250,
+        traveled: 0
+      }
+    }),
+    new Ennemy({
+      position: {
+        x: 4900, 
+        y: 0,
+      },
+      velocity: {
+        x: -0.3,
+        y: 0,
+      },
+      distance: {
+        limit: 100,
+        traveled: 0
+      }
+    }),
+    new Ennemy({
+      position: {
+        x: 6000, 
+        y: 0,
+      },
+      velocity: {
+        x: -0.3,
+        y: 0,
+      },
+      distance: {
+        limit: 100,
+        traveled: 0
+      }
+    }),
+    new Ennemy({
+      position: {
+        x: 7350, 
+        y: 250,
+      },
+      velocity: {
+        x: -0.3,
+        y: 0,
+      },
+      distance: {
+        limit: 100,
+        traveled: 0
+      }
+    }),
+    new Ennemy({
+      position: {
+        x: 9800, 
+        y: 250,
+      },
+      velocity: {
+        x: -0.3,
+        y: 0,
+      },
+      distance: {
+        limit: 250,
+        traveled: 0
+      }
+    }),
   ]
   // array platforms + positions
-  platforms = [new Platform({
-    x:platformImage.width *4 + 300 -2 + platformImage.width - platformSmallTallImage.width, y:270, image: platformSmallTallImage
-  }), new Platform({
-    x: -1, y: 470, image: platformImage
-  }), new Platform({
-    x:platformImage.width -3, y:470, image: platformImage
-  }), new Platform({
-    x:platformImage.width *2 + 100 , y:470, image: platformImage, block: true
-  }),new Platform({
-    x:platformImage.width *3 + 300 , y:470, image: platformImage, block: true
-  }),new Platform({
-    x:platformImage.width *4 + 300 -2, y:470, image: platformImage
-  }), new Platform({
-    x:platformImage.width *5 + 640 -2, y:470, image: platformImage, block: true
-  }),new Platform({
-    x:600, y: 100, image: blockTriImage, block: true
-  })]
+  platforms = [   
+    new Platform({
+      x: 600,
+      y: 180,
+      image: createImage(blockSix),
+      block: true
+    }),
+    new Platform({
+      x: 2700,
+      y: 180,
+      image: createImage(block),
+      block: true
+    }),
+    new Platform({
+      x: 2220,
+      y: 250,
+      image: createImage(tPlatform)
+    }),
+    new Platform({
+      x: 7250,
+      y: 180,
+      image: createImage(blockSix)
+    }),
+    new Platform({
+      x: 7800,
+      y: 250,
+      image: createImage(tPlatform)
+    }),
+    new Platform({
+      x: 3350,
+      y: 220,
+      image: createImage(blockTri),
+      block: true
+    }),
+    new Platform({
+      x: 3800,
+      y: 220,
+      image: createImage(blockTri),
+      block: true
+    }),
+    new Platform({
+      x: 8300,
+      y: 400,
+      image: createImage(blockTri),
+      block: true
+    }),
+    new Platform({
+      x: 8600,
+      y: 300,
+      image: createImage(block),
+      block: true
+    }),
+    new Platform({
+      x: 8800,
+      y: 300,
+      image: createImage(block),
+      block: true
+    }),
+    new Platform({
+      x: 9000,
+      y: 400,
+      image: createImage(blockTri),
+      block: true
+    }),
+    new Platform({
+      x: 9400,
+      y: 400,
+      image: createImage(block),
+      block: true
+    }),
+    new Platform({
+      x: 9900,
+      y: 250,
+      image: createImage(tPlatform)
+    }),
+    new Platform({
+      x: 10400,
+      y: 200,
+      image: createImage(block),
+      block: true
+    }),
+    new Platform({
+      x: 10600,
+      y: 200,
+      image: createImage(block),
+      block: true
+    }),
+  ]
 
   genericObjects = [
     new GenericObject({
@@ -614,10 +839,75 @@ async function init(){
   ]
 
   scrollOffset = 0
+
+  const platformsMap = ['lg','gap','lg','gap','gap','lg','gap','t','gap','xt','gap','t','gap','t','gap','xt','gap','lg','gap','gap','gap','gap','gap','gap','gap','md','gap','gap','gap', 'lg']
+
+  let platformDistance = 0
+
+  platformsMap.forEach(symbol => {
+    switch(symbol) {
+      case 'lg': 
+        platforms.push(new Platform({
+          x: platformDistance,
+          y: canvas.height - lgPlatformImage.height + 20,
+          image: lgPlatformImage,
+          block: true,
+        })
+      )
+
+      platformDistance += lgPlatformImage.width
+
+      break
+
+      case 'md': 
+        platforms.push(new Platform({
+          x: platformDistance,
+          y: canvas.height - mdPlatformImage.height + 20,
+          image: mdPlatformImage,
+          block: true,
+        })
+      )
+
+      platformDistance += mdPlatformImage.width
+
+      break
+
+      case 'gap': 
+        platformDistance += 220
+
+        break
+      
+      case 't':
+        platforms.push(new Platform({
+          x: platformDistance,
+          y: canvas.height - tPlatformImage.height,
+          image: tPlatformImage,
+          block: true,
+        })
+      )
+
+      platformDistance += tPlatformImage.width
+
+      break
+
+      case 'xt':
+        platforms.push(new Platform({
+          x: platformDistance,
+          y: canvas.height - xtPlatformImage.height,
+          image: xtPlatformImage,
+          block: true,
+        })
+      )
+
+      platformDistance += xtPlatformImage.width
+
+      break
+    }
+  })
 }
 
 const timerDisplay = document.createElement('div');
-timerDisplay.id = 'timerDisplay';
+timerDisplay.id = 'timerDisplay';  
 timerDisplay.style.position = 'absolute';
 timerDisplay.style.fontFamily = 'Genjiro';
 timerDisplay.style.top = '25%';
@@ -655,6 +945,45 @@ function animate() {
     platform.velocity.x = 0
   })
 
+  if (flagPole) {
+    flagPole.update()
+    flagPole.velocity.x = 0
+
+    // player touche le flag
+    if (
+      !game.disableUserInput &&
+      objectsTouch({
+        object1: player,
+        object2: flagPole
+      })
+    ){
+      game.disableUserInput = true
+      player.velocity.x = 0      
+      player.velocity.y = 0
+      player.currentSprite = player.sprites.stand.right
+      gravity = 0
+
+      gsap.to(player.position, {
+        y: canvas.height - lgPlatformImage.height - player.height + 20, duration: 1,
+        onComplete(){
+          player.currentSprite = player.sprites.run.right
+        }
+      })
+
+      gsap.to(player.position, {
+        delay: 1,
+        x: canvas.width,
+        duration: 2,
+        ease: 'power1.in',
+        onComplete(){
+          setTimeout(() => {
+            init()
+          }, 2000);
+        }
+      })
+    }
+  }
+
   bows.forEach((Bow, i) => {
     if (objectsTouch({
       object1: player,
@@ -669,7 +998,7 @@ function animate() {
 
   ennemies.forEach((ennemy, index) => {
     ennemy.update()
-  
+
     if (collisionTop({
       object1: player,
       object2: ennemy
@@ -682,22 +1011,27 @@ function animate() {
       ennemy.collidable &&
       player.position.x + player.width - 140 >= ennemy.position.x &&
       player.position.y + player.height - 128 >= ennemy.position.y &&
-      player.position.x <= ennemy.position.x + ennemy.width - 140
+      player.position.x <= ennemy.position.x + ennemy.width - 140 &&
+      player.position.y <= ennemy.position.y + ennemy.height
     ) {
       if (player.powerUps.Bow) {
         player.invincible = true
         player.powerUps.Bow = false
-  
+
         setTimeout(() => {
           player.invincible = false
         }, 1000);
-      } else if (!player.invincible) init()
+      } else if (!player.invincible) {
+        init();
+      }
     }
-  })
+})
   
   player.updateDirection()
   player.update()
   player.drawIcon()
+
+  if (game.disableUserInput) return
 
   let hitSide = false
 
@@ -733,6 +1067,9 @@ function animate() {
 
       if (!hitSide) {
         scrollOffset += player.speed
+
+        flagPole.velocity.x = -player.speed
+
         genericObjects.forEach(genericObject => {
           genericObject.velocity.x = -player.speed * 0.66
         })
@@ -768,6 +1105,9 @@ function animate() {
 
       if (!hitSide) {
         scrollOffset -= player.speed
+
+        flagPole.velocity.x = player.speed
+
         genericObjects.forEach(genericObject => {
           genericObject.velocity.x = player.speed * .66
         })
@@ -858,6 +1198,8 @@ animate();
 
 // Fonction keydown
 addEventListener('keydown', ({ keyCode }) => {
+  if (game.disableUserInput) return
+
   if (!gameStarted) return;
   if (!player.attacking) {
     switch (keyCode) {
@@ -875,7 +1217,7 @@ addEventListener('keydown', ({ keyCode }) => {
         break;
       case 90: // Z - Haut
         keys.up.pressed = true;
-        if (!player.isJumping && (Date.now() - player.lastJumpTime) > 600) {
+        if (!player.isJumping && (Date.now() - player.lastJumpTime) > 480) {
           player.isJumping = true;
           player.lastJumpTime = Date.now();
         }
@@ -894,6 +1236,8 @@ addEventListener('keydown', ({ keyCode }) => {
 
 // Fonction keyup
 addEventListener('keyup', ({ keyCode }) => {
+  if (game.disableUserInput) return
+
   if (!player.attacking) {
     switch (keyCode) {
       case 81: // Q - Gauche
