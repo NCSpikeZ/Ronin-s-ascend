@@ -157,6 +157,7 @@ class Player {
 
   draw() {
     c.save()
+    c.globalAlpha = this.opacity
     c.drawImage(
       this.currentSprite,
       128 * this.frames,
@@ -580,13 +581,12 @@ async function init(){
     disableUserInput: false
   }
 
-  audio.audioLevel.play()
-
   gravity = 1
 
-  player.velocity.x = 0
-  player.velocity.y = 0
-  lastKey = 'up'
+  keys.right.pressed = false;
+  keys.left.pressed = false;
+  keys.up.pressed = false;
+
 
   timer = 0
   score = 0
@@ -1020,6 +1020,9 @@ function animate() {
         ease: 'power1.in',
         onComplete: () => {
           init()
+          audio.audioLevel.play()
+          player.velocity.x = 0
+          player.velocity.y = 0
         }
       })
     }
@@ -1032,7 +1035,7 @@ function animate() {
     })) {
       setTimeout(() => {
         bows.splice(i, 1)
-        audio.audioBonus.volume = audio.audioBonus.volume * 0.2;
+        audio.audioBonus.volume = audio.audioBonus.volume * 0.3;
         audio.audioBonus.play()
         player.powerUps.Bow = true
         score += 300

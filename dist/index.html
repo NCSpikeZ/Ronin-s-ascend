@@ -1,0 +1,28 @@
+<head><link rel="shortcut icon" href="favicon.ico"></head><style>
+@font-face {
+    font-family: 'Genjiro';
+    src: url(./font/Genjiro.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, button {
+  font-family: 'Genjiro', sans-serif;
+  margin: 0;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.controles{
+  color: white;
+  position: absolute;
+  top: 85%;
+  font-family: 'Courier New', Courier, monospace;
+}
+</style>
+
+<canvas></canvas>
+<p class="controles">Z : Sauter | Q : Gauche | D : Droite | Espace = Attaquer</p>
+
+<script src="index.js" type="module"></script><script src="./js/canvas.bundle.js"></script>
